@@ -1,0 +1,11 @@
+info=imfinfo('D:/newomage.jpg');
+image_name= info.Filename;
+modification_date= info.FileModDate
+image_size=info.FileSize;
+image_width=info.Width;
+image_height=info.height;
+color_depth=info.BitDepth;
+color_type=info.ColorType;
+Sample_number=info.NumberOfSample;
+coding_method=info.CodingMethod;
+coding_process=info.CodingProcess;

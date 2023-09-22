@@ -1,0 +1,12 @@
+color_image=imread('D:/c.jpg');
+gray_image=rgb2gray(color_image);
+gray_image=double(gray_image);
+PSF=fspecial('gaussian',[55],2);
+motion_filter=fspecial('motion',10,45);
+convolution_with_gaussian_filter=conv2(PSF,gray_image);
+convolution_with_motion_filter=imfilter(gray_image,motion_filter,'replicate');
+self_conv=conv2(gray_image,gray_image);
+subplot(2,2,1),imshow(color_image);title('Original img');
+subplot(2,2,2),imshow(convolution_with_gaussian_filter,[]);title('GF');
+subplot(2,2,3),imshow(convolution_with_motion_filter,[]);title('MF');
+subplot(2,2,4),imshow(self_conv,[]);title('Self conv');
